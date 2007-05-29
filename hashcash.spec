@@ -33,6 +33,7 @@ behaves somewhat like md5sum, but with SHA1.
 %setup -q
 
 %build
+sed -i -e 's|/usr/lib|%{_libdir}|' Makefile
 make COPT="$RPM_OPT_FLAGS" "PACKAGER=RPM" gnu-openssl
 
 %install
