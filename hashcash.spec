@@ -11,7 +11,7 @@ Group: Networking/Mail
 URL: http://www.hashcash.org/
 Source: http://www.hashcash.org/binaries/rpms/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: openssl-devel >= 0.9.8
+BuildRequires: openssl-static-devel >= 0.9.8
 
 %description
 Hashcash is a denial-of-service counter measure tool.  It's main current use
