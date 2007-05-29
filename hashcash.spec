@@ -1,6 +1,6 @@
 %define name hashcash
-%define version 1.21
-%define release %mkrel 3
+%define version 1.22
+%define release %mkrel 1
 
 Summary: Hashcash anti-spam / denial-of-service counter-measure tool
 Name: %{name}
