@@ -60,3 +60,68 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/*/*
 %{_docdir}/*
 
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 1.22-6mdv2011.0
++ Revision: 619355
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.22-5mdv2010.0
++ Revision: 429387
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.22-4mdv2009.0
++ Revision: 246794
+- rebuild
+
+* Wed Jan 02 2008 Olivier Blin <oblin@mandriva.com> 1.22-2mdv2008.1
++ Revision: 140746
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Sep 18 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.22-2mdv2008.0
++ Revision: 89686
+- rebuild
+
+* Tue May 29 2007 Funda Wang <fwang@mandriva.org> 1.22-1mdv2008.0
++ Revision: 32375
+- New upstream version
+
+* Tue May 29 2007 Funda Wang <fwang@mandriva.org> 1.21-3mdv2008.0
++ Revision: 32327
+- fix build on x86_64
+- BuildRequires openssl-static-devel
+- Really rebuild against openssl 0.98
+
+
+* Wed Apr 26 2006 Nicolas Lécureuil <neoclust@mandriva.org> 1.21-2mdk
+- Fix BuildRequires
+
+* Tue Mar 28 2006 Jerome Soyer <saispo@mandriva.org> 1.21-1mdk
+- New release 1.21
+
+* Mon Oct 03 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.17-2mdk
+- BuildRequires fix
+
+* Fri Jun 24 2005 Guillaume Cottenceau <gc@mandrakesoft.com> 1.17-1mdk
+- mandrivaized
+
+* Tue Sep 07 2004 Adam Back <adam@cypherspace.org>
+- add cpu/platform specific tests to compile best code for platform
+
+* Sun Mar 07 2004 Adam Back <adam@cypherspace.org>
+- used general targets {_bin|_man|_doc}dir etc
+
+* Sun Mar 07 2004 Jochen Schönfelder <arisel@arisel.de>
+- tried to merge Mandrake & redhat rpms
+
+* Sat Mar 06 2004 Jochen Schönfelder <arisel@arisel.de>
+- Mandrake-build fixes
+- sha1-manpage moved to sha1-hashcash
+
+* Thu Jun 26 2003 Adam Back <adam@cypherspace.org> 
+- First spec file
+
