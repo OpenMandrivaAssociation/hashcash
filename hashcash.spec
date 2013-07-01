@@ -2,7 +2,7 @@
 %define version 1.22
 %define release %mkrel 6
 
-Summary: Hashcash anti-spam / denial-of-service counter-measure tool
+Summary: Anti-spam / denial-of-service counter-measure tool
 Name: %{name}
 Version: %{version}
 Release: %{release}
