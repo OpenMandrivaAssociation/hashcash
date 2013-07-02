@@ -1,6 +1,6 @@
 %define name hashcash
 %define version 1.22
-%define release %mkrel 6
+%define release  7
 
 Summary: Anti-spam / denial-of-service counter-measure tool
 Name: %{name}
@@ -10,7 +10,6 @@ License: CPL or choice of public domain/BSD/LGPL/GPL
 Group: Networking/Mail
 URL: http://www.hashcash.org/
 Source: http://www.hashcash.org/binaries/rpms/%{name}-%{version}.tar.bz2
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: openssl-static-devel >= 0.9.8
 
 %description
@@ -34,24 +33,22 @@ behaves somewhat like md5sum, but with SHA1.
 
 %build
 sed -i -e 's|/usr/lib|%{_libdir}|' Makefile
-make COPT="$RPM_OPT_FLAGS" "PACKAGER=RPM" gnu-openssl
+make COPT="%{optflags}" "PACKAGER=RPM" gnu-openssl
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_bindir}/
-install -d $RPM_BUILD_ROOT/%{_mandir}
-install -d $RPM_BUILD_ROOT/%{_mandir}/man1
-install -d $RPM_BUILD_ROOT/%{_docdir}/
-install -d $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}
+install -d %{buildroot}/%{_bindir}/
+install -d %{buildroot}/%{_mandir}
+install -d %{buildroot}/%{_mandir}/man1
+install -d %{buildroot}/%{_docdir}/
+install -d %{buildroot}/%{_docdir}/%{name}-%{version}
 
-install -m 755 hashcash $RPM_BUILD_ROOT/%{_bindir}/
-install -m 755 sha1 $RPM_BUILD_ROOT/%{_bindir}/
-install -m 644 hashcash.1 $RPM_BUILD_ROOT/%{_mandir}/man1
-install -m 644 sha1-hashcash.1 $RPM_BUILD_ROOT/%{_mandir}/man1
-install -m 644 README LICENSE CHANGELOG $RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version}/
+install -m 755 hashcash %{buildroot}/%{_bindir}/
+install -m 755 sha1 %{buildroot}/%{_bindir}/
+install -m 644 hashcash.1 %{buildroot}/%{_mandir}/man1
+install -m 644 sha1-hashcash.1 %{buildroot}/%{_mandir}/man1
+install -m 644 README LICENSE CHANGELOG %{buildroot}/%{_docdir}/%{name}-%{version}/
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
