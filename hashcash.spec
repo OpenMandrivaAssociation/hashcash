@@ -10,6 +10,7 @@ License: CPL or choice of public domain/BSD/LGPL/GPL
 Group: Networking/Mail
 URL: https://www.hashcash.org/
 Source: http://www.hashcash.org/binaries/rpms/%{name}-%{version}.tar.bz2
+BuildRequires:	make
 BuildRequires: openssl-static-devel >= 0.9.8
 
 %description
